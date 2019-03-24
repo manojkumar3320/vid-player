@@ -1,0 +1,29 @@
+.header{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    padding:20px 0;
+    z-index: 99;
+}
+
+.header .wrapper{
+    display:flex;
+    align-items:center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    width:30%;
+}
+
+.menu{
+    width:70%;
+}
+
+.menu ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}

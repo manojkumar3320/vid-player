@@ -1,0 +1,17 @@
+.video span{
+    opacity:0.5;
+}
+
+.video-image {
+    min-height: 156px;
+    background-position: top center;
+}
+
+.video-content {
+    padding: 10px 15px 15px;
+    text-align: left;
+}
+
+.video-content h3{
+    margin:0 0 10px;
+}

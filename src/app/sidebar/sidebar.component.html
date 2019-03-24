@@ -1,0 +1,34 @@
+<div  [@hover] = "state" class="sidebar">
+	<div class="icon">
+		<img class="logo black" src="/assets/download.jpg">
+		<img class="logo white" src="/assets/download.jpg">
+	</div>
+	<div class="recent-tracks tracks">	
+		<i class="fas fa-music"></i>
+		<div class="music-tracks">
+			<ul>
+				<li *ngFor="let video of recentVideosList">
+					<a (click)="playVideo(video)">{{ getSongName(video.snippet.title) }}</a>
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<div class="favorite-tracks tracks">
+		<i class="fas fa-heart"></i>
+		<div class="music-tracks">
+				<ul>
+					<li *ngFor="let video of favoriteVideoTracks">
+						<a (click)="playVideo(video)">{{ music.title }}</a>
+					</li>
+				</ul>	
+			</div>		
+	</div>
+	<div class="settings" [ngClass]="{'active': showingSettings}">
+		<ul>
+			<li><a appTheme [theme]="'night'"><i class="fas fa-moon"></i></a></li>
+			<li><a appTheme [theme]="'day'"><i class="fas fa-sun"></i></a></li>
+		</ul>
+		<a (click)="showSettings()"><i class="fas fa-cog"></i></a>
+	</div>
+		
+</div>

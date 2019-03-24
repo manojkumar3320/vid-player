@@ -1,0 +1,153 @@
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: calc(50.5vh - 19.5px) 0;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.hero-section:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.hero-section .wrapper {
+  max-width: 770px;
+  position: relative;
+  z-index: 99;
+}
+
+.hero-section video {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+a#scrolldown {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  font-size: 40px;
+  width: 20px;
+  z-index: 99;
+  margin: 0 auto;
+  opacity: 0.9;
+  animation: scrolldown 1s infinite;
+  transition: all ease-in-out .3s;
+  cursor: pointer;
+}
+
+@keyframes scrolldown {
+
+  0% {
+    bottom: 40px;
+  }
+
+  50% {
+    bottom: 30px;
+  }
+
+  100% {
+    bottom: 40px;
+  }
+
+}
+
+/* Hero */
+
+input#search {
+  width: 100%;
+  display: inline-block;
+  border:1px solid #e1e1e1;
+}
+
+form.sticky {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin-left: 60px;
+  text-align: center;
+  z-index: 99;
+}
+
+form.sticky input {
+  width: 100%;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+/* Videos Section */
+
+.videos-section {
+  padding: 100px 0;
+  overflow-x: hidden;
+}
+
+.videos-listing {
+  margin-right: -1.5%;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+app-list-video {
+  flex-basis: 23.5%;
+  margin-right: 1.5%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Video Details */
+
+.videodetails {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.86);
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease-in-out .3s;
+  display: flex;
+  align-items: center;
+}
+
+.videodetails.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+app-video-details.video-details-container {
+  display: block;
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px 40px;
+}
+
+a#close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}

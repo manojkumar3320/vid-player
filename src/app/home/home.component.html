@@ -1,0 +1,56 @@
+<div class="home">
+	<div class="sidebar">
+		<app-sidebar
+			[recentVideosList] = "recentVideosList"
+			(seletedVideo) = "openPopUp($event, 'null')"
+		>
+		</app-sidebar>
+	</div>
+	<div class="main-content">
+		<div class="hero-section">
+			<video autoplay muted loop id="myVideo">
+				<source src="/assets/video-bg-day.mp4" type="video/mp4">
+			</video>
+			<div class="wrapper">
+				<form [formGroup]="searchForm" [ngClass]="{'sticky': stickyInput}">
+					<input 
+						appScrollSmooth 
+						[searchText]="searchFormControl.searchString.value" 
+						[videosListingElement]="videosListingElement" 
+						id="search" placeholder="Search" type="text" 
+						class="form-control" formControlName="searchString" name="search" required
+					>
+				</form>
+			</div>
+			<a id="scrolldown" 
+				appScrollSmooth 
+				[videosListingElement]="videosListingElement">
+				<i class="fas fa-angle-down"></i>
+			</a>
+		</div>
+		<div #videosListing class="videos-section">
+			<div class="wrapper">
+				<div class="videos-listing">
+					<app-list-video 
+						*ngFor="let video of videosList; let videoID = index;"
+						[ngClass]="{'active': selectedVideoID === video.id}"
+						[videoID]="video.id"
+						[video]="video"
+						(click)="showDetails(videoID)"
+					>
+					</app-list-video> 
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<div class="videodetails" [ngClass]="{'active':selectedVideoID !== null}">
+	<a id="close" (click)="closeDetails()"><i class="fas fa-times"></i></a>
+	<app-video-details 
+	class="video-details-container"
+	[videoDetails]="videoDetails"  
+	(closePanel)="closeDetails($event)"
+	*ngIf = "selectedVideoID !== null"
+	>
+	</app-video-details>
+</div>	

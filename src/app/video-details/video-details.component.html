@@ -1,0 +1,11 @@
+<div class="details" >
+    <h3>{{ videoDetails.snippet.title }}</h3>
+    <iframe 
+        width="750" 
+        height="507" 
+        [src]="getVideoURL(videoDetails)">
+    </iframe>
+    <p>{{ videoDetails.snippet.description }}</p>
+</div>
+
+

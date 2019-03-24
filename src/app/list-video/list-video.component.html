@@ -1,0 +1,14 @@
+<div class="video" [ngClass]="{'active': selectedVideoID === videoID}">
+	<div 
+		class="video-image" 
+		[ngStyle]="{'background-image': 'url(' + video.snippet.thumbnails.medium.url + ')'}"
+	>
+	</div>
+	<div class="video-content">	
+		<h4>{{ video.snippet.title }}</h4>
+		<div class="view-time">
+			<span id="views">{{ video.views }}</span>
+			<span id="time">{{ video.date }}</span>
+		</div>
+	</div>	
+</div>
